@@ -11,7 +11,9 @@ kubectl exec -it $(kubectl get po -o jsonpath='{.items[0].metadata.name}') -- mo
 rs.initiate()
 
 var cfg = rs.conf();
+
 cfg.members[0].host="mongo1.pacman-app.svc.clusterset.local:27017";
+
 rs.reconfig(cfg);
 
 rs.add("mongo2.pacman-app.svc.clusterset.local:27017");
