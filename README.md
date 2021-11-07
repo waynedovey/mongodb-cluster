@@ -17,6 +17,7 @@ rs.reconfig(cfg);
 rs.add("mongo2.pacman-app.svc.clusterset.local:27017");
 rs.add("mongo3.pacman-app.svc.clusterset.local:27017");
 rs.add("mongo4.pacman-app.svc.clusterset.local:27017");
+rs.add("mongo5.pacman-app.svc.clusterset.local:27017");
 
 rs.status()
 
