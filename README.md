@@ -1,8 +1,10 @@
 # mongodb-cluster
 
-** MongoDB DB steps **
+***MongoDB DB steps***
 
 ---
+
+oc project pacman-app
 
 kubectl exec -it $(kubectl get po -o jsonpath='{.items[0].metadata.name}') -- mongo
 
