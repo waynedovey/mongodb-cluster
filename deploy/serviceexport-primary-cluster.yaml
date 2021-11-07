@@ -3,3 +3,9 @@ kind: ServiceExport
 metadata:
   name: mongo1
   namespace: pacman-app
+---
+apiVersion: multicluster.x-k8s.io/v1alpha1
+kind: ServiceExport
+metadata:
+  name: mongo3
+  namespace: pacman-app
