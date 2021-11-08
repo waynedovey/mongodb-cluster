@@ -48,6 +48,6 @@ cfg.members[4].votes = 1
 
 rs.reconfig(cfg)
 
-rs.status()```
+rs.status()
 
 ---
