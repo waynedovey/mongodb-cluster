@@ -2,7 +2,9 @@
 
 ---
 
-```oc project pacman-app
+```
+
+oc project pacman-app
 
 kubectl exec -it $(kubectl get po -o jsonpath='{.items[0].metadata.name}') -- mongo
 
