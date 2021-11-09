@@ -1,15 +1,15 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: pacman-app
+  name: mongodb-cluster
   labels:
-    app: pacman-app
+    app: mongodb-cluster
 ---
 apiVersion: app.k8s.io/v1beta1
 kind: Application
 metadata:
   name: mongodb-primary-cluster
-  namespace: pacman-app
+  namespace: mongodb-cluster
 spec:
   componentKinds:
   - group: apps.open-cluster-management.io
@@ -25,15 +25,15 @@ spec:
 apiVersion: v1                      
 kind: Namespace
 metadata:
-  name: ggithubcom-waynedovey-mongodb-cluster-ns
+  name: mongodb-cluster-ns
 ---
 apiVersion: apps.open-cluster-management.io/v1
 kind: Channel
 metadata:
   annotations:
     apps.open-cluster-management.io/reconcile-rate: medium
-  name: ggithubcom-waynedovey-mongodb-cluster
-  namespace: ggithubcom-waynedovey-mongodb-cluster-ns
+  name: mongodb-cluster
+  namespace: mongodb-cluster-ns
 spec:
   type: Git
   pathname: 'https://github.com/waynedovey/mongodb-cluster.git'
@@ -48,9 +48,9 @@ metadata:
   labels:
     app: mongodb-primary-cluster
   name: mongodb-primary-cluster-subscription-1
-  namespace: pacman-app
+  namespace: mongodb-cluster
 spec:
-  channel: ggithubcom-waynedovey-mongodb-cluster-ns/ggithubcom-waynedovey-mongodb-cluster
+  channel: mongodb-cluster-ns/mongodb-cluster
   placement:
     placementRef:
       kind: PlacementRule
@@ -62,7 +62,7 @@ metadata:
   labels:
     app: mongodb-primary-cluster
   name: mongodb-primary-cluster-placement-1
-  namespace: pacman-app
+  namespace: mongodb-cluster
 spec:
   clusterSelector:
     matchLabels:
