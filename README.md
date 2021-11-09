@@ -32,3 +32,33 @@ cfg.members[2].votes = 1
 rs.reconfig(cfg)
 
 rs.status()
+
+use pacman-dev
+db.createUser(
+  {
+    user: "pacman",
+    pwd:  "pacman",
+    roles: [ { role: "readWrite", db: "pacman-dev" }]
+  }
+);
+
+use pacman-qa
+db.createUser(
+  {
+    user: "pacman",
+    pwd:  "pacman",
+    roles: [ { role: "readWrite", db: "pacman-qa" }]
+  }
+);
+
+use pacman-prod
+db.createUser(
+  {
+    user: "pacman",
+    pwd:  "pacman",
+    roles: [ { role: "readWrite", db: "pacman-prod" }]
+  }
+);
+
+show dbs;
+
