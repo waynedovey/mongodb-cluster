@@ -66,6 +66,6 @@ metadata:
 spec:
   clusterSelector:
     matchLabels:
-      'environment': 'dev'
-      'apps/pacman': 'deployed'
+      #'environment': 'dev'
+      #'apps/pacman': 'deployed'
       'mongodb': 'secondary'
